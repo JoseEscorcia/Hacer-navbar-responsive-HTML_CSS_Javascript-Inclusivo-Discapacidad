@@ -1,2 +1,2 @@
-# Hacer-navbar-responsive-HTML_CSS_Javascript-Inclusivo-Discapacidad
+# Hacer navbar responsive con HTML, CSS y Javascript. Inclusivo-Discapacidad.
 En este proyecto encontrarás la guía de cómo crear un menú de navegación (navbar) que tendrá la capacidad de ajustarse a tamaño de pantallas más pequeños, es decir, será responsive. Además, se dan consejos que permiten la inclusión a personas con discapacidades para que sus dispositivos puedan leer las opciones que están señalando mientras se desplazan con la tecla TAP.
