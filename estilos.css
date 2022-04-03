@@ -1,0 +1,160 @@
+* {
+    /* Eliminar espacios que vienen por defecto */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* ***************************************  */
+  }
+  
+  body{ /* Es todo el cuerpo del HTML */
+    font-family: sans-serif; /* Tipografía */
+    padding: 90px 20px 0; /* Espaciado */ /* El espaciado de "90px" es para que el "navbar" tenga su espacio, ya que gracias a "position: fixed;" perdió la capacidad de tener espacio propio */
+  }
+  
+  .header{ /* Es el contenedor principal de todo el NAV */
+    background-color: #0769e993; /* Color de fondo */
+    height: 80px; /* Altura */
+    width: 100%; /* Ancho */ /* Ancho máximo */
+    position: fixed; /* Es para que al dar "scroll" con el mouse el "NAV" se quede fijo arriba*/ /* "fixed" remueve al elemento del flujo normal del documento */
+    /* Con "position:fixed" también define que el menú de navegación no va a ocupar ningún espacio en el contenido del cuerpo de la página, es decir, estará como flotando y no tendrá su espacio */
+    /* Para que pueda ocupar espacio debemos asignarle un padding arriba de "90px", esto lo hacemos en el "body" */
+
+    top: 0px; /* el "navbar" no va a tener separaciones desde arriba*/
+    left: 0px; /* El "navbar" no va a tener separaciones de la izquierda */
+  }
+  
+  .nav{ /* Es el segundo contenedor principal de todo el NAV */
+    display: flex; /* Lo volvemos un contenedor de FLEXBOX */
+    justify-content: space-between; /*"justify-content" alinea horizontalmente */ /* "space-between" alinea los elementos uno a la izquierda y el otro a la derecha */
+
+    max-width: 992px; /* Ancho máximo */
+    /* 
+    Nota importante: 
+        Cuando se abre la página desde una pantalla demasiado grande los elementos que están con las propiedades "space-between" suelen repartirse entre los bordes izquierda-derecha (como es lo normal) pero al ser la pantalla muy grande se dificulta un poco leerlos porque están muy separados de sí, por eso colocamos el "max-width" en un tamaño como 992px, para que solo se separe como "space-between" hasta cuando hay una pantalla de 992px, si ya la pantalla es más grande entonces el contenido del NAVBAR va a estar más centrado (gracias al "margin: 0 auto") para facilitar la lectura.
+
+        La medida de 992px fue sacada de los "Breakpoints" de Bootstrap:
+             Extra pequeño -------> <576px
+             Pequeña -------------> >=576px
+             Medio ---------------> >=768px
+             Grande --------------> >=992px
+             Extra grande --------> >=1200px
+             Extra extra grande --> >=1400px
+
+    */
+
+    margin: 0 auto; /* Centrado Izquierda-Derecha */
+  }
+  
+  .nav-link{ /* Es cada elemento <a> (Inicio, Habilidades, Proyectos y Contacto) del NAVBAR */
+    color: white; /* Color de letra */
+    text-decoration: none; /* Quitar subrayados */
+  }
+  
+  .logo{ /* Es el logotipo */
+    font-size: 30px; /* Tamaño de letra */
+    font-weight: bold; /* "font-weight" es el grueso de la letra */
+    padding: 0 40px; /* Padding Izquierda-Derecha */
+    line-height: 80px; /* Establece el interlineado del texto */ /* En este caso lo usamos para centrar el logo, que en esta ocasión es texto */
+    /*Los 80px de "line-height" salen del alto del NAVBAR que definimos en ".header" */
+    }
+  
+  .nav-menu{ /* Es el contenedor de cada ".nav-link" */
+    display: flex; /* Usamos Flexbox */ /* Por defecto al colocar "flex" hace los elementos se coloquen uno al lado del otro*/
+    margin-right: 40px; /* Margen hacia la derecha */ /* Es para que quede separado de la derecha */
+    list-style: none; /* Quitar los puntos de decoración de las listas */
+  }
+  
+  .nav-menu-item{ /* Es cada elemento <li> del NAVBAR */
+    font-size: 18px; /* Tamaño de letra */
+    margin: 0 10px; /* Margen Izquierda-Derecha */ /* Es para separar los elementos (Inicio, Habilidades, Proyectos y Contacto) del NAVBAR */
+    line-height: 80px; /* Establece el interlineado del texto */ /* En esta ocasión lo usamos para centrar verticalmente */
+    /*Los 80px de "line-height" salen del alto del NAVBAR que definimos en ".header" */
+
+    text-transform: uppercase; /* Colocar el texto a mayuscula */
+
+    width: max-content; /* Es para que apesar de que se achique la pantalla NUNCA recorte el contenido */ /* Esto lo usamos para arreglar el problema que al reducir la pantalla y hay 2 o más palabras en el mismo botón no se corten */
+  }
+  
+  .nav-menu-link{ /* Es cada elemento <a> del NAVBAR (Es igual que el ".nav-link) */
+    padding: 8px 12px; /* Espaciado arriba-abajo y derecha-izquierda */ /* Esto lo estamos aplicando para que cuando usemos "hover" tenga un espaciado */
+    border-radius: 3px; /* Borde redondeado */ /* Esto lo estamos aplicando para que cuando usemos "hover" tenga un borde redondeado */
+  }
+  
+
+  /* Cuando pasemos el mouse por encima */
+  .nav-menu-link:hover, /* Es cada elemento <a> del NAVBAR */
+  .nav-menu-link_active{ /* Es cada elemento <a> del NAVBAR, pero esta clase "active" es para que un elemento siempre quede como si estuviera activado */
+    background-color: #034574; /* Color de fondo */
+    transition: 0.5s; /* Para que tenga una transición del cambio de color cuando pasemos el mouse por encima, es para que no se vea tan brusco */
+  }
+  /* ********************************** */
+
+
+  /* TOGGLE (Es el icono de 3 lineas para el responsive) */ 
+  .nav-toggle{ /* Es el botón de las 3 lineas para el responsive */
+    color: white; /* Color de letra */
+    background: none; /* Sin fondo */ /* Lo usamos para quitarle los estilos que vienen por defecto en un botón */
+    border: none; /* Quitar bordes */ /* Lo usamos para quitarle los estilos que vienen por defecto en un botón */
+    font-size: 30px; /* Tamaño de letra */
+    padding: 0 20px; /* Padding Izquierda-Derecha */
+    line-height: 60px; /* Establece el interlineado del texto */ /* Esto lo usamos para centrar verticalmente */ /* Decimos que es 60px y no los 80px que definimos en el ".header" porque el toggle lo vamos a usar es cuando tengamos la medida de pantalla de pantalla de dispositivos moviles, y cuando lleguemos a esas medidas vamos a modificar el alto del NAVBAR */
+    cursor: pointer; /* Aparecer puntero de "mano" */
+    display: none; /* Ocultar */ /* Este lo hacemos para que se oculte cuando estemos en pantallas de escritorio */
+  }
+  
+  /* Media Querys (medidas para el responsive) */
+  @media (max-width: 768px){ /* Cuando la pantalla tenga menos que un ancho de 768px hará tal cosa: */
+    body{ /* Es todo el cuerpo del HTML */
+      padding-top: 70px; /* Espaciado arriba */
+    }
+  
+    .header{ /* Es el contenedor principal de todo el NAV */
+      height: 60px; /* Altura */ /* Modificamos la altura de NAVBAR, tal y como lo habiamos predecido en ".nav-toggle". */
+    }
+  
+    .logo{ /* Es el logotipo */
+      font-size: 25px; /* Tamaño de fuente */
+      padding: 0 20px; /* Espaciado */
+      line-height: 60px; /* Establece el interlineado del texto */ /* Esto lo usamos para centrar */     /*Los 60px de "line-height" salen del alto del NAVBAR que definimos en ".header" del tamaño de dispositivos más pequeños*/
+    }
+  
+    .nav-menu{ /* Es el contenedor de que contiene las opciones del NAVBAR */
+      flex-direction: column; /* Es para que los elementos del NAVBAR se comporten como BLOQUE, es decir, en columna */ /* Este comportamiento lo queremos porque cuando estamos en dispositivos más pequeños queremos leer de arriba-abajo, pero en escritorio de izquierda-derecha */
+      align-items: center; /* "align-item" alinea verticalmente */
+      margin: 0; /* Quitar margen */
+      background-color: #2c3e50; /* Color de fondo */
+      position: fixed; /* Es para que al dar "scroll" con el mouse el "NAV" se quede fijo arriba*/ /* Esto lo usamos para que la posición no dependa de donde se encuentra, sino que se "salga" de su contenedor y su posición dependa de la ventana donde se encuentre. */
+      top: 60px; /* el "navbar" es para que tenga una separación de 60px desde arriba para que el fondo oscuro del menú RESPONSIVE no se pegue con el NAVBAR */
+      width: 100%; /* Para que tome el ancho de la pantalla */
+      padding: 20px 0; /* Espaciado arriba-abajo */ /* Le colocamos "0px" a izquierda-derecha porque el navegador le agregar un espaciado por defecto a los elementos "<ul>" */
+  
+      height: calc(100% - 60px); /* Esto es para que el menú responsive tome el alto total de la pantalla restando los 60px que tiene de alto el NAVBAR, es decir, hace una operación matematica. */
+      
+      overflow-y: auto; /* Esto lo hacemos para que aparezca la barra de "scroll" en dado caso que la pantalla sea muy pequeña */
+  
+      left: 100%; /* Es para que al volver a presionar el "toggle" se esconda completamente el menú */
+      transition: left 0.3s; /* Para que tenga una pequeña animación de deslizarse al presionar el "toggle" */ /* La animación se dará cuando tengamos "left" */
+    }
+  
+    .nav-menu-item{ /* Es cada elemento <li> del NAVBAR */
+      line-height: 70px; /* Establece el interlineado del texto */ /* Esto separa entre sí las opciones del menú */
+    }
+  
+    .nav-menu-link:hover, /* Cuando pasemos el mouse */
+    .nav-menu-link_active{
+      background: none; /* Evita que cambie el color de fondo del elemento */
+      color: #83c5f7; /* Cambiar el color de letra del elemento*/
+    }
+  
+    .nav-toggle{
+      display: block; /* Lo vuelve un elemento bloque */ /* Esto lo hacemos para que aparezca el icono de las 3 lineas (menú amburguesa) o también conocido como "toggle". */
+    }
+  
+    .nav-menu_visible{ /* Cuando esté visible el menú de navegación */   /* El botón del "toggle" es quien controlará esta clase */
+      left: 0px; /* Es para que al activar el menú responsive no tenga separación de la izquierda de la pantalla */
+    }
+  
+    .nav-toggle:focus:not(:focus-visible){ /* Esto es para que solo se resalten las opciones cuando navegamos con la tecla "TAP" */ /* Basicamente dice: Cuando el elemento que tiene la clase "nav-toggle" tiene el "focus" pero no el tipo "focus-visible" entonces harás tal cosa... */
+      outline: none; /* Le quita los bordes de "seleccionado" cuando seleccionamos algo. */
+    }
+  }

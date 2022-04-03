@@ -1,0 +1,72 @@
+<!-- Todo este código (HTML, CSS y Javascript) fue tomado del video "Barra de navegación responsive y accesible con HTML, CSS y JS" del canal de Youtube "
+Yoelvis Mulen { code }" pero fue modificado y documentado por José ER -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- CDN para los iconos -->
+    <script src="https://kit.fontawesome.com/7e5b2d153f.js"
+      crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+    <header class="header">
+      <nav class="nav">
+
+        <!-- Área del logotipo -->
+        <a href="#" class="logo nav-link">Logo</a>
+        <!-- ***************** -->
+
+        <!-- En este botón está el icono de las 3 rayas para el responsive -->
+        <button class="nav-toggle" aria-label="Abrir menú"> <!-- El "aria-label" es para que las personas con discapacidad visual ingresen a nuestra WEB y navegen entre las opciones con la tecla TAP su dispositivo pueda leerle qué es lo que hace dicho botón. -->
+          <i class="fas fa-bars"></i>
+        </button>
+        <!-- ************************************************************* -->
+
+        <!-- Menú de opciones -->
+        <ul class="nav-menu">
+
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link nav-menu-link_active">Inicio</a>
+          </li>
+
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Habilidades</a>
+          </li>
+
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Proyectos</a>
+          </li>
+
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Contacto</a>
+          </li>
+
+        </ul>
+        <!-- **************** -->
+
+      </nav>
+    </header>
+
+    <main>
+      <h1>Responsive Navbar</h1>
+      <h2>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, iusto velit ipsam eveniet dolorum labore consequatur earum, ex quis quidem ratione deserunt dolor quam veritatis esse vero possimus repellat necessitatibus. Natus vel unde molestiae tenetur officia. Laudantium, aperiam. Harum illum earum soluta laboriosam. Fugit animi pariatur distinctio. Enim necessitatibus adipisci atque suscipit repellat. Facere nulla quis, aliquam iste error voluptate. Qui iure dicta, labore quisquam iste blanditiis sit similique porro minima eum saepe omnis ea adipisci culpa totam harum, asperiores provident repudiandae doloribus vitae. Vel nam velit quas culpa. Odit facilis accusamus neque impedit eos tenetur atque nam iusto aspernatur quia fugit autem, magnam dolore perferendis in corrupti at officiis voluptatem culpa delectus? Cum tempora consequuntur cumque tempore dicta natus dolorum consectetur repellat temporibus exercitationem, molestias id repudiandae nam illum accusamus provident iusto nihil officia asperiores unde corrupti ullam hic? Cupiditate eos quae harum, laboriosam iusto illo tenetur dolores, maxime sunt corporis deserunt omnis suscipit accusamus error corrupti. Doloribus, quasi? Molestiae, iste! Perferendis error, libero omnis excepturi facilis eos nesciunt vel harum delectus quae laborum nostrum voluptate. Numquam voluptatem saepe voluptatibus aliquam reprehenderit. Commodi rem ratione atque voluptates iure voluptate, exercitationem est qui recusandae, possimus eligendi. Numquam expedita soluta rerum sit commodi dolor eum laudantium aliquam suscipit inventore mollitia totam minima quibusdam velit sunt debitis eos laborum repellat, possimus perferendis iste molestias. Voluptates, similique sint perspiciatis officia nemo minima ratione nobis. Odio maiores porro autem itaque assumenda necessitatibus, unde, tenetur fugit voluptate earum, debitis reiciendis! Magni, error facere. Odit eaque molestiae ex autem asperiores eligendi! Ut nesciunt ipsum officiis blanditiis omnis rerum eius quasi, voluptas optio soluta minus enim libero at. Reprehenderit voluptate, voluptatibus fugiat earum totam non beatae porro magnam sint tempora quibusdam numquam, rerum error consectetur ex architecto, nihil dolore? Odit sapiente saepe commodi modi aperiam, reprehenderit rerum, dolorum magni asperiores fugit culpa vero enim excepturi sit cum quod? Accusamus dolores blanditiis tempora eos officia facilis perferendis corrupti aliquam deleniti magni. Architecto ad modi incidunt saepe ex magni quidem, blanditiis inventore impedit voluptates quibusdam corrupti recusandae quod fugiat iusto iste cum. Incidunt, facere accusamus quam eum laborum, non, pariatur ipsam veritatis atque voluptates nulla porro placeat optio a. Illo id molestiae officia magnam dignissimos rerum. Pariatur praesentium autem quisquam tempora sunt doloribus deserunt ullam impedit asperiores dolor velit odit voluptatum eveniet illum, neque tempore facilis cumque fugit facere officiis soluta ipsum sit error voluptas. Ducimus voluptatum consequatur nemo nobis dolorem minus, modi distinctio laboriosam, voluptas dignissimos tenetur sed voluptatem deserunt porro quod suscipit! Optio molestias maiores atque quam, dignissimos et deleniti ipsum quo esse, animi recusandae blanditiis adipisci minima dolores pariatur, quod modi sequi. Facere ut aspernatur accusamus eius, debitis tempore, consequuntur omnis ex sint laborum excepturi beatae amet laboriosam neque eaque voluptatibus maiores! Quas dolorem porro facere adipisci nihil explicabo, debitis veniam assumenda neque. Eius nihil quasi voluptatem quo, sit atque! Veritatis ducimus magnam repellendus magni non esse cupiditate quae? Voluptatum asperiores excepturi quibusdam maxime illo? Nostrum esse necessitatibus illum odio aspernatur soluta, ipsum quas possimus voluptates!
+      </h2>
+    </main>
+
+    <!-- Archivo Javascript -->
+    <script defer src="index.js"></script>  <!-- En este archivo Javascript vamos a controlar el evento del "toggle" (menún hamburguesa) para que agregue o no la clase ".nav-menu_visible", la cual muestra el menú en RESPONSIVE -->
+    <!-- El "defer" es para indicar al navegador que no espere por el script. En lugar de ello, debe seguir procesando el HTML. El script carga “en segundo plano” y se ejecuta cuando el DOM esta completo. -->
+  
+</body>
+</html>
